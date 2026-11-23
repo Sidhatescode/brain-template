@@ -1,6 +1,8 @@
 # Start here
 
-Two steps. Takes about fifteen minutes, most of it Claude working.
+For the easiest route, follow the Claude desktop and Obsidian instructions in
+[README.md](README.md). The steps below are an alternative if you already use Claude Code
+in a terminal. Open your brain folder in the terminal first.
 
 ```bash
 claude
@@ -70,13 +72,8 @@ tension that the source never states outright.
 When it's done, ask it something the raw file doesn't answer directly. That's the whole
 point.
 
-Then commit, every time:
-
-```bash
-git add -A && git commit -m "ingest: my first source"
-```
-
-There is no other undo. A page overwritten between commits is gone.
+Keep a separate secure backup of the whole brain folder. If you use Git, commits also help
+you recover earlier versions; a ZIP download does not include Git history.
 
 ---
 

@@ -65,7 +65,8 @@ for whichever they pick — `START-HERE.md` has them all:
 
 Wait for the file to appear — `ls raw/` — then run `/ingest` on it and follow the **"If this
 is the vault's first ingest"** section of that command. 4–8 pages, narrate the taxonomy,
-show the tree, answer one question off the new wiki, commit.
+show the tree, and answer one question off the new wiki. If this folder is a Git repository,
+offer to commit; otherwise remind the owner to make a separate backup.
 
 ## Phase 5 — Hand over
 

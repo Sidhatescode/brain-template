@@ -303,9 +303,9 @@ starts failing as the wiki grows — don't build search infrastructure preemptiv
   redirect that creates a page, and check `wiki/index.md` for the page name first — the index
   is the cheapest existence check in the vault.** A `[[name]]` with a written summary in the
   index means the page exists, whatever you assume.
-- ⚠️ **Commit often. There is no other undo.** Anything overwritten between commits is gone.
-  `git add -A && git commit -m "ingest: <source>"` at the end of every session costs nothing
-  and is the only safety net this design has. If the owner hasn't committed in a while, say so.
+- ⚠️ **Keep a separate secure backup.** A ZIP download has no Git history. If this folder is
+  a Git repository, commits can help recover earlier versions, but are not a separate backup.
+  Never publish private sources to a public repository without the owner's informed consent.
 - **A concurrent session may be editing the same files.** A "file changed on disk" notice is
   not always an echo of your own write — read it before assuming.
 - Every claim should trace back to a source. Cite in frontmatter `sources:`.

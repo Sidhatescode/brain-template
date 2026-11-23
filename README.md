@@ -5,20 +5,60 @@ a wiki — pages for the people, the projects, the decisions, and the patterns n
 sources name out loud. It keeps the links, the index and the numbers straight so you don't
 have to.
 
-Everything is plain markdown in a git repo. No database, no embeddings, no server, no
-account. If you delete Claude tomorrow you still have a wiki.
+Everything is stored as plain Markdown files on your computer. Claude helps you build the
+wiki, and Obsidian lets you browse it. You can still read the files without either app.
 
 ## Get started
 
-```bash
-git clone <this-repo> brain && cd brain
-claude
-```
+### 1. Create a home for your brain
 
-Then type `/setup`. It asks four questions, rewrites the schema to match your subject, and
-does the first ingest with you. Fifteen minutes.
+On a Mac, open Finder and go to Desktop or Documents. Right-click an empty space, choose
+**New Folder**, and name it **My Brain**. On Windows, do the same in File Explorer.
 
-No Claude Code yet? `npm install -g @anthropic-ai/claude-code`.
+### 2. Download the template
+
+On this GitHub page, click the green **Code** button, then **Download ZIP**. Find the ZIP
+in Downloads and double-click it to extract it (on Windows, right-click and choose **Extract
+All**). Move the extracted folder into **My Brain**.
+
+Open that extracted folder. It should contain `CLAUDE.md` and the folders `raw`, `docs`,
+and `wiki`. This inner folder is your brain: select it in both Claude and Obsidian below.
+Keep its contents together, including hidden files. You don't need a GitHub account to
+download a public repository.
+
+### 3. Open it in Claude
+
+1. Download and install the [Claude desktop app](https://claude.com/download).
+2. Sign in with an account that has access to Claude Code. The Code tab requires an eligible
+   paid plan; usage limits apply.
+3. Open the **Code** tab and choose a **local** session.
+4. Use the project folder selector to open the extracted folder from step 2—the one
+   containing `CLAUDE.md`.
+5. In the chat, type `/setup` and press Enter. Claude will ask a few questions, customize
+   your brain, and guide you through adding your first source.
+
+If `/setup` doesn't appear, check that you selected the inner folder containing `CLAUDE.md`,
+not its parent `My Brain` folder, and start a new local session. If needed, ask Claude:
+“Read `CLAUDE.md` and `.claude/commands/setup.md`, then guide me through setup.”
+
+### 4. Add something worth remembering
+
+Choose a WhatsApp text export, meeting notes, an old project conversation, or notes about
+an idea you keep returning to. Put the file in the brain's `raw` folder when Claude asks.
+Claude will read it and discuss what it found before writing anything. Then ask a question,
+such as “What themes keep coming up?”
+
+Choose material you are comfortable sharing, including other people's messages. Your files
+are stored locally, but content Claude reads is sent to its service for processing.
+
+### 5. Explore it in Obsidian
+
+Download [Obsidian](https://obsidian.md/). Open it, choose **Open folder as vault**, and
+select the same extracted folder you selected in Claude. Open `wiki/index.md` to browse
+your pages, follow links, or use graph view to see how they connect. Claude and Obsidian
+work on the same files; there is no separate connection to set up.
+
+For a terminal-based setup, see [START-HERE.md](START-HERE.md).
 
 ## How it works
 
@@ -41,7 +81,7 @@ session.
 
 | Command | Use it when | What happens |
 |---|---|---|
-| `/setup` | Once, on a fresh clone | Interviews you, fits the schema to your subject, runs the first ingest. |
+| `/setup` | Once, on a fresh copy | Interviews you, fits the schema to your subject, runs the first ingest. |
 | `/spinup` | You start a session | Reads the log, asks what you're working on, loads only the pages that matter. |
 | `/ingest` | You added a file to `raw/` | Reads it, tells you what's in it, waits for your OK, then writes it into the wiki. |
 | `/breakdown` | It feels like a pile of documents | Finds ideas that keep coming up but have no page yet. Shows you a list before writing. |
@@ -68,15 +108,13 @@ literature.
 It is not a note-taking app — you don't write in it, you feed it. The value shows up around
 source ten, when it starts telling you things no single source said.
 
-## A warning worth reading
+## Back up your brain
 
-Two pages of git history is not a backup. Commit after every session:
-
-```bash
-git add -A && git commit -m "ingest: today's source"
-```
-
-A wiki page overwritten between commits is gone. This design has no other undo.
+Keep a separate, secure backup of the entire brain folder, including its hidden files, and
+update it regularly. A ZIP download is not a Git repository and does not provide version
+history. If you use Git, commits can help you recover earlier versions, but they are not a
+substitute for a separate backup. Be careful not to publish private sources to a public
+repository.
 
 ## Credit
 

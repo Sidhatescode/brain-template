@@ -40,8 +40,8 @@ extra work that makes the mechanic visible:
 - **Show your work at the end.** Print the tree of what you created, then answer one
   question off the new wiki unprompted — something the raw file does not state outright but
   the wiki now does. That is the whole point of the vault, demonstrated in one move.
-- **Then commit.** `git add -A && git commit -m "ingest: <source>"`. Tell them this is the
-  only undo they have.
+- **Back it up.** If this folder is a Git repository, offer to commit the changes. Otherwise
+  remind the owner to keep a separate secure backup of the entire brain folder.
 
 ## Checkpoint every 15 sources
 
